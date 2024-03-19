@@ -1,0 +1,22 @@
+/* vant-ui 字体处理*/
+
+@font-face {
+  font-style: normal;
+  font-weight: 400;
+  font-family: 'vant-icon';
+  src: url(../icon/vant-icon-eeb192.woff2) format('woff2'),
+    url(../icon/vant-icon-eeb192.woff) format('woff'),
+    url(../icon/vant-icon-eeb192.ttf) format('truetype');
+}
+
+.van-icon {
+  position: relative;
+  display: inline-block;
+  font: normal normal normal 14px/1 vant-icon;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+.van-icon::before {
+  display: inline-block;
+}

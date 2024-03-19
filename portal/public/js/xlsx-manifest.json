@@ -1,0 +1,1 @@
+{"name":"xlsx_d9691c80a9cb5850a72f","content":{"./node_modules/xlsx/xlsx.mjs":{"id":1073,"buildMeta":{"exportsType":"namespace","strictHarmonyModule":true,"providedExports":["set_cptable","set_fs","version","parse_xlscfb","parse_zip","read","readFile","readFileSync","write","writeFile","writeFileSync","writeFileAsync","writeXLSX","writeFileXLSX","utils","stream","SSF","CFB"]}}}}

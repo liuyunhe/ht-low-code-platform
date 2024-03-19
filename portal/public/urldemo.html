@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>URL表单示例</title>
+    <script src="http://code.jquery.com/jquery-2.1.1.min.js" crossorigin="anonymous"></script>
+    <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+    <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <script src="hotent.helper.js"></script>
+    <script>
+
+        $(function () {
+            var id = getUrlParam("id");
+            if (id) {
+                // TODO 如果有id时，从后台获取id对应的业务数据
+            }
+
+            // 如果表单内容为延迟加载，加载完成后会比初始表单高，此时父页面的iframe会出现上下滚动条。
+            // 调用hotent.getHeight()会自动同步当前高度给父页面，父页面会调整iframe高度避免出现上下滚动条。
+            setTimeout(function () {
+                hotent.getHeight();
+            }, 500);
+        });
+
+        function saveData() {
+            var data = {}, id = getUrlParam("id");
+
+            // 1.从页面上获取业务数据
+            var t = $('#form').serializeArray();
+            $.each(t, function () {
+                data[this.name] = this.value;
+            });
+
+            var eipData = {};
+
+            // 2.没有id时为发起页面
+            if (!id) {
+                // TODO 保存数据到后台，并拿到这条数据的主键
+                var id = new Date().getTime().toString();
+                eipData = { state: true, type: "saveData", businessKey: id, sysCode: "demo", vars: data };
+            }
+            // 3.有id时为审批中，根据id从业务系统中查询后台数据
+            else {
+                // TODO 表单数据更新到后台，如果作为流程变量的数据有更新，则需要通过eipData中的vars传递给eip系统，否则不需要传参数过去。
+                eipData = { state: true, type: "saveData" };
+            }
+
+            // 4.通知EIP系统父页面，URL表单的数据已经保存成功。
+            hotent.sendMessage(eipData);
+        }
+
+        // 获取URL后面的参数
+        function getUrlParam(name) {
+            var after = window.location.search || window.location.hash;
+            if (!after) return null;
+            var params = decodeURI(after);
+            var reg = new RegExp("\W*" + name + "=([^&]*)(&|$)");
+            var r = params.match(reg);
+            if (r != null) return unescape(r[1]); return null;
+        }
+    </script>
+</head>
+
+<body>
+    <div class="row">
+        <div class="col col-md-6 col-md-offset-3">
+            <form id="form">
+                <div class="form-group">
+                    <label for="qjr">请假人</label>
+                    <input type="text" required class="form-control" name="qjr" id="qjr">
+                </div>
+                <div class="form-group">
+                    <label for="qjlx">请假类型</label>
+                    <select class="form-control" id="qjlx" name="qjlx" required>
+                        <option value="1">事假</option>
+                        <option value="2">婚假</option>
+                        <option value="3">产假</option>
+                        <option value="4">病假</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="qjts">请假天数</label>
+                    <input type="number" class="form-control" id="qjts" name="qjts" required>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

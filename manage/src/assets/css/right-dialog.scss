@@ -1,0 +1,28 @@
+//右侧弹窗显示样式
+.right-dialog {
+  /deep/ .el-dialog__wrapper{
+    overflow: hidden;
+  }
+    /deep/ .el-dialog {
+      height: 100% !important;
+      border-radius: 0 !important;
+      right: 0 !important;
+      float: right !important;
+      .el-dialog__header {
+        border-bottom: 1px solid #a9a9a9;
+      }
+      .el-dialog__body {
+        // height: 100%;
+        overflow-y: auto;
+      }
+      .el-dialog__footer {
+        .dialog-footer {
+          position: absolute;
+          bottom: 20px;
+          left: 0;
+          right: 0;
+          text-align: center;
+        }
+      }
+    }
+  }

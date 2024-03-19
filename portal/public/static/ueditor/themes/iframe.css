@@ -1,0 +1,6 @@
+/*可以在这里添加你自己的css*/
+@media print{
+    .view p strong{
+        zoom: 0.55;
+    }
+}

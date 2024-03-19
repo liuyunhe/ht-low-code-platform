@@ -1,0 +1,105 @@
+{
+  "name": "dh",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "dll": "webpack -p --progress --config ./webpack.dll.conf.js",
+    "test:unit": "vue-cli-service test:unit",
+    "report": "vue-cli-service build  --report"
+  },
+  "dependencies": {
+    "@riophae/vue-treeselect": "^0.3.0",
+    "axios": "0.18.0",
+    "dingtalk-jsapi": "^2.10.3",
+    "echarts": "4.2.1",
+    "echarts-stat": "^1.1.1",
+    "element-ui": "2.13.0",
+    "file-saver": "^2.0.2",
+    "filesize": "^9.0.9",
+    "hotent-ui": "^0.12.10",
+    "js-audio-recorder": "^1.0.6",
+    "js-base64": "2.5.1",
+    "moment": "2.24.0",
+    "node-sass": "^4.14.1",
+    "nprogress": "0.2.0",
+    "pdfjs-dist": "^2.5.207",
+    "qrcode": "^1.4.4",
+    "v-runtime-template": "1.5.2",
+    "v-viewer": "^1.5.1",
+    "vant": "^2.5.3",
+    "vconsole": "^3.14.6",
+    "vee-validate": "2.1.7",
+    "vue": "2.6.11",
+    "vue-amap": "^0.5.10",
+    "vue-area-linkage": "5.1.0",
+    "vue-esign": "^1.0.5",
+    "vue-i18n": "^8.14.0",
+    "vue-pdf": "^4.2.0",
+    "vue-print-nb": "1.0.3",
+    "vue-quill-editor": "3.0.6",
+    "vue-router": "3.0.1",
+    "vuex": "^3.6.2"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-export-default-from": "^7.16.7",
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.16.7",
+    "@babel/plugin-proposal-optional-chaining": "^7.16.7",
+    "@babel/preset-env": "^7.16.11",
+    "@vue/cli": "^3.2.0",
+    "@vue/cli-plugin-babel": "^3.2.0",
+    "@vue/cli-plugin-eslint": "3.2.0",
+    "@vue/cli-plugin-unit-mocha": "3.2.0",
+    "@vue/cli-service": "3.2.0",
+    "@vue/cli-service-global": "^4.5.17",
+    "@vue/eslint-config-prettier": "4.0.1",
+    "@vue/test-utils": "1.0.0-beta.20",
+    "add-asset-html-webpack-plugin": "^3.1.3",
+    "babel-eslint": "10.0.1",
+    "babel-plugin-import": "^1.13.0",
+    "babel-polyfill": "^6.26.0",
+    "chai": "4.1.2",
+    "clean-webpack-plugin": "^1.0.1",
+    "compression-webpack-plugin": "^4.0.1",
+    "element-theme-chalk": "2.4.11",
+    "eslint": "5.8.0",
+    "eslint-plugin-vue": "5.0.0",
+    "jquery": "2.2.4",
+    "sass-loader": "8.0.0",
+    "stylus": "0.54.5",
+    "stylus-loader": "3.0.2",
+    "vue-template-compiler": "2.6.11",
+    "webpack-bundle-analyzer": "^4.5.0",
+    "webpack-cli": "^3.2.3",
+    "webpackbar": "^5.0.2"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "@vue/prettier"
+    ],
+    "rules": {
+      "indent_style": "tab",
+      "indent_size": "tab"
+    },
+    "parserOptions": {
+      "parser": "babel-eslint"
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
+}

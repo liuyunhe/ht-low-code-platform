@@ -1,0 +1,33 @@
+/* 改变系统主题色变量 ——*/
+$--theme-color: #2761ff; /*主题颜色（即首页导航栏颜色）——#2761ff*/
+$--theme-color-active: #1f4ecc; /*首页导航栏颜色鼠标悬停到某一个菜单时的颜色——#1F4ECC*/
+
+/* 改变element组件主题色变量 ——*/
+$--color-primary: #409eff; /*主题颜色——#409EFF*/
+$--color-success: #67c23a; /*成功颜色——#67c23a*/
+$--color-warning: #e6a23c; /*警告颜色——#e6a23c*/
+$--color-danger: #f56c6c; /*危险颜色——#f56c6c*/
+$--color-info: #909399; /*信息颜色——#909399*/
+$--color-text-primary: #303133; /*主要文字颜色——#303133*/
+$--color-text-regular: #606266; /*常规文字颜色——#606266*/
+$--color-text-secondary: #909399; /*次要文字颜色——#909399*/
+$--color-text-placeholder: #c0c4cc; /*占位文字颜色——#c0c4cc*/
+$--border-color-base: #dcdfe6; /*一级边框颜色——#dcdfe6*/
+$--border-color-light: #e4e7ed; /*二级边框颜色——#e4e7ed*/
+$--border-color-lighter: #ebeef5; /*三级边框颜色——#ebeef5*/
+$--border-color-extra-light: #f2f6fc; /*四级边框颜色——#f2f6fc*/
+$--color-white: #ffffff; /*基础白色——#FFFFFF*/
+$--color-black: #000000; /*基础黑色——#000000*/
+$--background-color-base: #f5f7fa; /*基础背景色——#F5F7FA*/
+$--background-color-secondary: #f0f2f5; /*第二基础背景色——#F0F2F5*/
+$--color-secondary: #dfebfc;
+
+/* 左侧树宽度设置 */
+$--aside-width: 230px;
+
+//主要的一步：
+:export {
+  aside_width: $--aside-width;
+}
+//项目背景色
+$--bg-color-page:#efefef;

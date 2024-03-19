@@ -1,0 +1,40 @@
+/*首页模板样式*/
+
+/* .datasetCell{ padding: 15px 10px;} */
+
+.datasetCell:last-child {
+    border: none;
+}
+
+.datashow {
+    font-size: 30px;
+    margin-bottom: 5px;
+    margin-top: 1.5em;
+    color: #fb5e5e;
+    text-align: center;
+}
+
+.dataTitle {
+    font-size: 12px;
+    color: #797979;
+    text-align: center;
+}
+
+.elcoldataSets :hover {
+    background-color: #f1f1f1;
+}
+
+.elcoldataSets {
+    cursor: pointer
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+}
+
+html, body, body>.el-container {
+    height: 100%;
+}
+

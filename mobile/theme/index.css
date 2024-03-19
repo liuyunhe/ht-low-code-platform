@@ -1,0 +1,101 @@
+.el-main {
+  display: block;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  overflow: auto;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0px !important;
+}
+.van-notify--warning {
+  background-color: #ff976a;
+  z-index: 9999 !important;
+}
+.van-notify--success {
+  background-color: #07c160;
+  z-index: 9999 !important;
+}
+.van-notify--danger {
+  background-color: #ee0a24;
+  z-index: 9999 !important;
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2500 !important;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.van-dialog {
+  position: fixed;
+  top: 45%;
+  left: 50%;
+  width: 320px;
+  overflow: hidden;
+  font-size: 16px;
+  z-index: 3000 !important;
+  background-color: #fff;
+  border-radius: 16px;
+  -webkit-transform: translate3d(-50%, -50%, 0);
+  transform: translate3d(-50%, -50%, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  -webkit-transition-property: opacity, -webkit-transform;
+  transition-property: opacity, -webkit-transform;
+  transition-property: transform, opacity;
+  transition-property: transform, opacity, -webkit-transform;
+}
+.el-picker-panel {
+  color: #606266;
+  border: 1px solid #e4e7ed;
+  -webkit-box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+  background: #fff;
+  border-radius: 4px;
+  line-height: 30px;
+  margin: 5px 0;
+  right: 25px !important;
+  left: auto !important;
+}
+.custom-form .el-form-item--mini.el-form-item,
+.custom-form .el-form-item--small.el-form-item {
+  margin-bottom: 15px;
+}
+.el-header {
+  padding-right: 0px !important;
+  padding-left: 5px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+.el-dialog__header {
+  background: #f8f8f8;
+  padding: 10px 20px;
+  height: 24px;
+  line-height: 24px;
+  border-bottom: 1px solid #eee;
+  border-radius: 2px 2px 0 0;
+}
+.el-dialog__title {
+  font-size: 15px;
+  color: #333;
+}
+
+.el-dialog__headerbtn {
+  top: 12px;
+}
+.el-popper {
+  overflow: scroll;
+  max-width: 100%;
+}
+.el-message {
+  z-index: 20002 !important;
+}

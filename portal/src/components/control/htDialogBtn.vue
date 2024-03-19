@@ -1,0 +1,135 @@
+<template>
+  <div class="inputs" ref="inputs">
+    <el-input
+      size="small"
+      v-if="isShowInput && inputWriteable"
+      v-validate="inputValidate"
+      :name="inputName"
+      placeholder="请输入内容"
+      style="width:90%;"
+      clearable
+      v-model="inputValue"
+      @clear="clear"
+    >
+		<el-button  slot="append"  v-if="inputWriteable" btn="btn" style="margin-left: 20px" size="small" type="primary" :icon="this.icon" @click="customEvilJS()">{{this.btnName}}</el-button>
+	</el-input>
+	<el-button v-if="!isShowInput" btn="btn" style="margin-left: 20px" size="small" type="primary" :icon="this.icon" @click="customEvilJS()">{{this.btnName}}</el-button>
+    <small style="color:red;"
+      v-if="inputWriteable && errors.has('custom-form.'+inputName)"
+    >{{errors.first('custom-form.'+inputName)}}</small>
+    <span v-if="!inputWriteable">{{inputValue}}</span>
+	<span style="display:none;"  v-validate>
+	  <slot name="labeldesc">{{inputName}}</slot>
+	</span>
+  </div>
+</template>
+<script>
+import utils from "@/utils.js";
+import { Message, Loading } from 'element-ui';
+import { Base64 } from "js-base64";
+import i18n from '@/lang/index.js';
+import req from "@/request.js";
+
+export default {
+  name: "ht-dialog-btn",
+  props: ["validate", "value", "name", "permission","icon" ,"btnName" ,"attr","htCustomScript","isShowInput"],
+  data() {
+    return {
+      unwatchAry: [],
+      inputValue:"",
+      content:""
+    };
+  },
+  components: {
+
+  },
+  computed: {
+    inputVal: {
+      get() {
+        return this.value;
+      },
+      set(val) {
+        this.$emit("input", val);
+      }
+    },
+    inputWriteable: function() {
+      return utils.getWriteable(this.permission);
+    },
+    inputValidate: function() {
+      var validateObj= this.$store.state.index.validate;
+      return utils.addRequiredOrNot(this.permission, this.validate ,validateObj ,this);
+    },
+    inputName: function() {
+      let labeldesc = "";
+      if(this.$slots && this.$slots.labeldesc && this.$slots.labeldesc[0].children && this.$slots.labeldesc[0].children[0].text){
+        labeldesc = this.$slots.labeldesc[0].children[0].text;
+        return this.name ? this.name : utils.getName()+ "-" +labeldesc;
+      }else{
+        return this.name ? this.name : utils.getName();
+      }
+    }
+  },
+  mounted() {
+    if(this.value){
+      this.inputValue = this.value;
+    }
+  },
+  destroyed() {
+
+  },
+  created() {
+    this.$validator = this.$root.$validator;
+  },
+  methods: {
+    clear(){
+		this.inputValue = "";
+	},
+	customEvilJS(){
+		let _me = this;
+		let htCustomScript = Base64.decode(this.htCustomScript);
+		const formVm = utils.getOnlineFormInstance(_me);
+		function evil() {
+			let Fn = Function('req','data','i18n','Message','Loading','formVm', htCustomScript); //一个变量指向Function，防止有些前端编译工具报错
+			let result = Fn(req,formVm.data,i18n,Message,Loading,formVm);
+			return result;
+		}
+		let resultValue = evil();
+		if(resultValue){
+			this.inputValue = resultValue;
+			this.$emit("input", resultValue);
+		}
+	}
+	
+  }
+};
+</script>
+<style lang="stylus" scoped>
+div[aria-invalid='true'] >>> .el-input__inner, div[aria-invalid='true'] >>> .el-input__inner:focus {
+  border-color: #f56c6c;
+}
+.form-table {
+  width: 100%;
+  border-top: 1px solid #ebeef5;
+  border-left: 1px solid #ebeef5;
+}
+
+.form-table th {
+  text-align: left ;
+  color: #666;
+}
+
+.form-table th > span {
+  color: #f00;
+}
+
+.form-table th, .form-table td {
+  border-right: 1px solid #ebeef5;
+  border-bottom: 1px solid #ebeef5;
+  padding: 10px;
+  min-width: 0;
+  box-sizing: border-box;
+  text-overflow: ellipsis;
+  vertical-align: middle;
+  position: relative;
+}
+</style>

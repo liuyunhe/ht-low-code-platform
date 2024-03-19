@@ -1,0 +1,193 @@
+@import 'element-variables.scss';
+
+/* 改变 icon 字体路径变量，必需 */
+$--font-path: '~element-ui/lib/theme-chalk/fonts';
+
+@import '~element-ui/packages/theme-chalk/src/index';
+@import '../icon/iconfont.css';
+
+// 个人中心status字体颜色
+
+.green-color {
+  color: $--color-success;
+}
+
+.red-color {
+  color: $--color-danger;
+}
+
+.blue-color {
+  color: $--color-primary;
+}
+
+.yellow-color {
+  color: $--color-warning;
+}
+
+.green-bg-color {
+  background-color: $--color-success;
+}
+
+.purple-bg-color {
+  background-color: $--purple-color;
+}
+
+.blue-bg-color {
+  background-color: $--color-primary;
+}
+
+.yellow-bg-color {
+  background-color: rgb(255, 154, 65);
+}
+
+.pink-bg-color {
+  background-color: $--pink-color;
+}
+
+.wathet-blue-bg-color {
+  background-color: rgb(100, 195, 225);
+}
+
+.gray-bg-color {
+  background-color: rgb(221, 221, 221);
+}
+
+//首页栏目常用功能样式
+.common-functions {
+  display: flex;
+  flex-wrap: wrap;
+
+  .common-functions__item {
+    height: 110px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+    margin-top: 20px;
+    width: calc(33.33% - 20px);
+
+    .item-text,
+    .icon-size {
+      font-size: 14px;
+      color: #fff;
+    }
+
+    .icon-size {
+      font-size: 36px;
+    }
+  }
+}
+
+.el-aside.aside-tree__wrap {
+  overflow: unset;
+
+  .tree {
+    height: calc(100% - 100px);
+    overflow: auto;
+
+    /* 滚动条宽度 */
+    &::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+
+    /* 滚动条的滑块 */
+    &::-webkit-scrollbar-thumb {
+      background-color: #ccc;
+      border-radius: 3px;
+    }
+  }
+}
+.ht-table,
+.ht-selector__table {
+  .el-radio {
+    .el-radio__label {
+      display: none;
+    }
+  }
+}
+
+.tooltip-wrapper {
+  position: relative;
+  display: inline-block;
+  padding: 4px 6px;
+  top: 10px;
+}
+.tooltip-wrapper::before {
+  content: '';
+  position: absolute;
+  border-width: 4px 6px 0 6px;
+  border-style: solid;
+  border-color: transparent;
+  border-top-color: black;
+  opacity: 0;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.tooltip-wrapper:hover > .msg-log-content {
+  opacity: 1;
+  position: static;
+  display: inline-block;
+}
+
+.msg-log-icon {
+  position: relative;
+  top: -10px;
+}
+
+.msg-log-icon:hover + .msg-log-content {
+  opacity: 1;
+  position: static;
+  display: inline-block;
+}
+
+.msg-log-content {
+  position: absolute;
+  background: black;
+  text-align: center;
+  color: #fff;
+  border-radius: 5px;
+  padding: 4px 2px;
+  min-width: 80px;
+  pointer-events: auto;
+  opacity: 0;
+  left: 50%;
+  top: -5px;
+  transform: translateX(-50%) translateY(-100%);
+}
+.tooltip-wrapper:hover::after,
+.tooltip-wrapper:hover::before {
+  opacity: 1;
+}
+/* 右侧 */
+.tooltip-wrapper:hover[position='right']::before {
+  top: 15%;
+  left: 8%;
+  margin-left: -3px;
+  transform: translateY(-50%) rotate(-90deg);
+}
+.tooltip-wrapper[position='right'] > .msg-log-content {
+  top: 50%;
+  left: 100%;
+  margin-left: 10px;
+  transform: translateY(-50%);
+}
+
+/* ccwgq 2022-06-07 所有滚动条样式的修改  不支持火狐 */
+* {
+  /* 滚动条宽度 */
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  /* 滚动条的滑块 */
+  &::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 3px;
+  }
+}
+

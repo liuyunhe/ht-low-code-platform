@@ -1,0 +1,12 @@
+const _sysTypeData = [{"id":"6","name":"表单分类","typeKey":"FLOW_TYPE","parentId":"-1","isLeaf":"N","children":[{"createBy":"1","updateBy":"1","updateTime":"2019-11-20 14:45:25","createOrgId":"5211001","id":"139566","typeGroupKey":"FLOW_TYPE","name":"默认分类","typeKey":"mrfl","struType":1,"parentId":"6","depth":1,"path":"6.139566.","isLeaf":"N","ownerId":"0","sn":0,"icon":"{}","children":[{"createBy":"1","createTime":"2019-11-20 14:45:25","createOrgId":"1380712","id":"3543768","typeGroupKey":"FLOW_TYPE","name":"二级分类","typeKey":"ejfl","struType":1,"parentId":"139566","depth":1,"path":"6.139566.3543768.","isLeaf":"Y","ownerId":"0","sn":0,"icon":"{}","children":[],"isParent":"false","text":"二级分类"},{"createBy":"1","createTime":"2019-11-20 14:45:44","createOrgId":"1380712","id":"3543791","typeGroupKey":"FLOW_TYPE","name":"二级分类B","typeKey":"ejflB","struType":1,"parentId":"139566","depth":1,"path":"6.139566.3543791.","isLeaf":"Y","ownerId":"0","sn":0,"icon":"{}","children":[],"isParent":"false","text":"二级分类B"}],"isParent":"true","text":"默认分类"},{"createBy":"1","updateBy":"1","createTime":"2019-09-18 17:15:22","updateTime":"2019-10-30 17:51:40","createOrgId":"550987","id":"552566","typeGroupKey":"FLOW_TYPE","name":"行政类","typeKey":"xzl","struType":1,"parentId":"6","depth":1,"path":"6.552566.","isLeaf":"Y","ownerId":"0","sn":0,"icon":"{}","children":[],"isParent":"false","text":"行政类"},{"createBy":"1","createTime":"2019-09-18 17:15:27","createOrgId":"550987","id":"552572","typeGroupKey":"FLOW_TYPE","name":"财务类","typeKey":"cwl","struType":1,"parentId":"6","depth":1,"path":"6.552572.","isLeaf":"Y","ownerId":"0","sn":0,"icon":"{}","children":[],"isParent":"false","text":"财务类"},{"createBy":"1","createTime":"2019-09-18 17:15:33","createOrgId":"550987","id":"552578","typeGroupKey":"FLOW_TYPE","name":"综合管理类","typeKey":"zhgll","struType":1,"parentId":"6","depth":1,"path":"6.552578.","isLeaf":"Y","ownerId":"0","sn":0,"icon":"{}","children":[],"isParent":"false","text":"综合管理类"},{"createBy":"1","createTime":"2019-11-05 10:36:16","createOrgId":"1751","id":"1807423","typeGroupKey":"FLOW_TYPE","name":"工厂类","typeKey":"gcl","struType":1,"parentId":"6","depth":1,"path":"6.1807423.","isLeaf":"Y","ownerId":"0","sn":0,"icon":"{}","children":[],"isParent":"false","text":"工厂类"}],"open":"true","isParent":"true","text":"流程分类"}];
+
+export default {
+    name: "sysTypeData",
+    getSysTypeByCatId(param) {
+            return new Promise((resolve) => {
+            setTimeout(() => {
+                resolve(_sysTypeData);
+            }, 500);
+        });
+    }
+}

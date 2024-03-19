@@ -1,0 +1,114 @@
+/* 改变字体的大小，所有改变字体的代码放置在此
+,再通过import 导入 */
+
+/**  字体改为 11pt   
+* 要修改为其它值，只需要改下面这个
+*  scss变量就好了
+*/
+$define-main-fontSize: 11pt;
+.list_main_content {
+  .content_top_wrap {
+    * {
+      font-size: $define-main-fontSize !important;
+    }
+  }
+  /deep/ .el-button,
+  /deep/.el-date-editor,
+  /deep/ .el-input,
+  /deep/.el-pagination,
+  /deep/.el-select {
+    * {
+      font-size: $define-main-fontSize !important;
+    }
+  }
+  /deep/ .el-table {
+    .el-table__body,
+    .el-table__header {
+      * {
+        font-size: $define-main-fontSize !important;
+      }
+    }
+  }
+}
+
+/deep/ .bpm-btn-dialog {
+  * {
+    font-size: $define-main-fontSize !important;
+    // color: black;
+    font-family: MicroSoft YaHei;
+  }
+  /deep/ .attach-upload {
+    display: none !important;
+  }
+  .el-dialog {
+    * {
+      font-size: $define-main-fontSize;
+      // color: black;
+      font-family: MicroSoft YaHei;
+    }
+  }
+}
+
+/deep/ .menu_aside_container .el-menu {
+  * {
+    font-size: $define-main-fontSize;
+  }
+}
+
+/** div子表,table子表,div孙表,table孙表 样式调整 */
+/deep/ .sub-header__div,
+/deep/ .sub-header__table,
+/deep/ .sun-header__div,
+/deep/ .sun-header__table {
+  * {
+    font-size: inherit !important;
+  }
+}
+/**TODO:暂时这样调整，后续待修改*/
+/deep/ .sub-table {
+  tfoot {
+    * {
+      font-size: 16px;
+    }
+  }
+  .el-form-item__label {
+    display: table-cell;
+    padding: 0 10px;
+    * {
+      font-size: 11pt !important;
+      font-weight: bold;
+    }
+  }
+  .el-form-item__content {
+    * {
+      font-size: 11pt !important;
+    }
+  }
+}
+
+/deep/ .el-input-group__append {
+  button {
+    margin-left: 0px !important;
+  }
+}
+// 数据中心去除collapse白色横线
+/deep/ .data_view,/deep/.data-preview-wrap {
+  .el-collapse {
+    border-top: none !important;
+  }
+  .search-and-btn__wrap {
+    * {
+      font-size: $define-main-fontSize;
+    }
+  }
+  .el-table {
+    * {
+      font-size: $define-main-fontSize;
+    }
+  }
+  .el-pagination {
+    * {
+      font-size: $define-main-fontSize !important;
+    }
+  }
+}

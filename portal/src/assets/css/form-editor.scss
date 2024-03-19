@@ -1,0 +1,97 @@
+@import "element-variables.scss";
+
+.widget-mask {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  background: #fff;
+  opacity: 0;
+  z-index: 7;
+}
+
+.widget-mask:hover {
+  outline: 1px dashed #f56c6c;
+}
+
+.drag-widget {
+  position: absolute;
+  cursor: move;
+  width: 36px;
+  height: 26px;
+  left: 15px;
+  top: -13px;
+  background: #fff;
+  z-index: 8;
+  border: 1px solid $--color-primary;
+  border-radius: 12px;
+}
+
+.drag-widget i.icon-drag {
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 26px;
+  margin-left: 10px;
+  color: $--color-primary;
+}
+
+.widget-form-item {
+  position: relative;
+  margin: 8px;
+}
+
+.widget-form-item:hover {
+  outline: 1px dashed #ccc;
+}
+
+.widget-view-action {
+  position: absolute;
+  right: 15px;
+  bottom: -15px;
+  height: 30px;
+  line-height: 30px;
+  border: 1px solid $--color-primary;
+  border-radius: 25px;
+  background: #fff;
+  z-index: 9;
+}
+
+.widget-view-action i {
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 30px;
+  cursor: pointer;
+}
+
+.widget-view-action i.icon-copy {
+  color: $--color-primary;
+  margin: 0 0 0 10px;
+}
+
+.widget-view-action i.icon-trash {
+  color: #f2a49d;
+  margin: 0 10px 0 0;
+}
+
+.widget-view-action .el-divider {
+  background: $--color-primary;
+  margin-bottom: 4px;
+}
+
+.widget-panel .ghost {
+  background: #f56c6c;
+  border: 2px solid #f56c6c;
+  outline-width: 0;
+  height: 3px;
+  box-sizing: border-box;
+  font-size: 0;
+  content: "";
+  overflow: hidden;
+  padding: 0;
+}
+
+>>> .el-form-item__label {
+  font-size: 12px;
+}

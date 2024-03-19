@@ -1,0 +1,168 @@
+* {
+  font-size: 12px;
+}
+
+html, body, #app {
+  margin: 0;
+  height: 100%;
+}
+
+.fullheight {
+  height: 100%;
+}
+
+.scrollbar-fullheight {
+  height: 100%;
+}
+
+.scrollbar-fullheight>.el-scrollbar__wrap {
+  overflow-x: auto;
+  margin-bottom: 0 !important;
+}
+
+.scrollbar-fullheight>.el-scrollbar__wrap>.el-scrollbar__view {
+  margin-bottom: 10px;
+}
+
+.inputs {
+  display: inline-block;
+}
+
+/*解决el-table的列边框有错位的问题*/
+
+body .el-table th.gutter {
+  display: table-cell!important;
+}
+
+/*通用删除按钮和其他按钮之间的分组问题*/
+
+.ht-delete-button+.el-button, .el-button+.ht-delete-button {
+  margin-left: 10px;
+}
+
+div.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+div.header-popper {
+  border-color: #DEDEDE;
+  border-radius: 0;
+  top: 30px !important;
+  padding: 0 !important;
+}
+
+.form-table {
+  width: 100%;
+  border-top: 1px solid #ebeef5;
+  border-left: 1px solid #ebeef5;
+}
+
+.form-table>thead>tr>th, .form-table>tbody>tr>th {
+  text-align: right;
+  color: #666;
+  font-weight: normal;
+}
+
+.form-table>tbody>tr>th.group-th {
+  text-align: left;
+  background: #f9f9f9;
+  font-weight: bold;
+}
+
+.form-table>thead>tr.sub-table-header>th {
+  text-align: center;
+  background: #fafafa;
+}
+
+.form-table>tbody>tr>th>span, .form-table>thead>tr>th>span {
+  color: #f00;
+}
+
+.form-table>tbody>tr>th, .form-table>tbody>tr>td, .form-table>tfoot>tr>td, .form-table>thead>tr>th {
+  border-right: 1px solid #ebeef5;
+  border-bottom: 1px solid #ebeef5;
+  padding: 15px;
+  min-width: 0;
+  box-sizing: border-box;
+  text-overflow: ellipsis;
+  vertical-align: middle;
+  position: relative;
+}
+
+.form-table>tfoot>tr>td {
+  padding: 5px 10px;
+}
+
+.is-required:before {
+  content: '*';
+  color: #F56C6C;
+  margin-right: 4px;
+}
+
+.show-ellipsis {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.show-ellipsis2 {
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+ol.guide-ol {
+  counter-reset: li;
+  margin: 0;
+  padding: 0;
+}
+
+ol.guide-ol>li {
+  font-size: 1.2em;
+  list-style: none;
+  margin: 0 0 0.5em 1.95em;
+  padding: 0.5em 1em;
+  position: relative;
+  line-height: 1.6em;
+  color: #555;
+}
+
+ol.guide-ol>li>code {
+  font-size: 1em;
+  font-weight: bold;
+  color: #f48d2f;
+}
+
+ol.guide-ol>li:before {
+  background: #8da97d;
+  color: white;
+  content: counter(li);
+  counter-increment: li;
+  font-size: 1.2em;
+  line-height: 1em;
+  padding: 0.5em 0;
+  position: absolute;
+  top: 0.6em;
+  left: -1.8em;
+  text-align: center;
+  width: 2em;
+}
+/* 全局dialog样式适配不同分辨率，(目前如果放开会对其他页面造成影响暂时隐藏) */
+/* .el-dialog__wrapper{
+  overflow: unset !important;
+}
+.el-dialog{
+  margin-top: 6vh !important;
+  height: 90% !important;
+}
+.el-dialog__body{
+  height: calc(100% - 180px);
+  overflow-y: auto;
+} */

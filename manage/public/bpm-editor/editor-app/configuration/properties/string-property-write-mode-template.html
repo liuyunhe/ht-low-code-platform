@@ -1,0 +1,9 @@
+
+<div ng-controller="KisBpmStringPropertyCtrl">
+    <input type="text" ng-model="property.value"
+    	   class="form-control"
+           spellcheck="false"
+           ng-blur="inputBlurred()"
+           ng-keypress="enterPressed($event)"
+           maxLength="200"/>
+</div>
